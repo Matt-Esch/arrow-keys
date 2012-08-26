@@ -1,0 +1,31 @@
+{
+  "name": "arrow-keys",
+  "version": "0.0.1",
+  "description": "A stream of arrow keys",
+  "keywords": [],
+  "author": "Raynos <raynos2@gmail.com>",
+  "repository": "git://github.com/Raynos/arrow-keys.git",
+  "main": "index",
+  "homepage": "https://github.com/Raynos/arrow-keys",
+  "contributors": [
+    {
+      "name": "Jake Verbaten"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Raynos/arrow-keys/issues",
+    "email": "raynos2@gmail.com"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/Raynos/arrow-keys/raw/master/LICENSE"
+    }
+  ],
+  "scripts": {
+  }
+}
