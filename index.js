@@ -1,5 +1,3 @@
-
-
 var through = require("through")
     , uuid = require("node-uuid")
     , KEYS = {
@@ -12,6 +10,8 @@ var through = require("through")
 
 window.addEventListener("keyup", onup)
 window.addEventListener("keydown", ondown)
+
+module.exports = ArrowKeys
 
 function ArrowKeys(fps) {
     var stream = through()
