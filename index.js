@@ -1,4 +1,4 @@
-var through = require("through")
+var Delta = require("delta-stream")
     , uuid = require("node-uuid")
     , KEYS = {
         "37": "left"
@@ -14,7 +14,7 @@ window.addEventListener("keydown", ondown)
 module.exports = ArrowKeys
 
 function ArrowKeys(fps) {
-    var stream = through()
+    var delta = Delta()
         , id = uuid()
 
     fps = fps || 60
@@ -23,13 +23,19 @@ function ArrowKeys(fps) {
 
     setTimeout(move, timeOffset)
     
-    return stream
+    return delta
 
     function move() {
         var changes = getChanges()
 
-        if (changes) {
-            stream.write([changes, Date.now(), id])
+        if (changes !== null) {
+            if (changes.x) {
+                delta.set("x", changes.x)
+            }
+
+            if (changes.y) {
+                delta.set("y", changes.y)
+            }
         }
 
         setTimeout(move, timeOffset)

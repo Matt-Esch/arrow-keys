@@ -8,11 +8,11 @@ Is compatible with [delta-stream][1]. Emits x, y change in "position" in reactio
 
 ``` js
 var ArrowKeys = require("arrow-keys")
-    , arrows = ArrowKeys()
+    , delta = ArrowKeys()
 
-arrows.on("data", function (data) {
-    // { y: -1 } { x: -1 } { x: 1 } { y: 1 }
-    console.log(data[0])
+delta.on("change", function (key, value) {
+    // y,-1   x,-1   x,1   y,1
+    console.log(key, ",", value)
 })
 
 /* NOW MASH UP LEFT RIGHT DOWN IN THAT ORDER */
